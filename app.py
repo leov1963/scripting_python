@@ -52,8 +52,14 @@ def write_regions():
             f.write(region)
             f.write('\n')
 
+def write_input_to_file():
+    user_input = input('Hello, enter your name:\n')
+    with open('names.txt', 'w') as f:
+        f.write(user_input)
+
 if __name__ == '__main__':
     # read_only()
     # write_only()
     # read_food_sales()
-    write_regions()
+    # write_regions()
+    write_input_to_file()

@@ -35,8 +35,25 @@ def read_food_sales():
             f.write(date)
             f.write('\n')
 
+def write_regions():
+    all_regions = []
+    with open('sampledatafoodsales.csv') as f:
+        data = f.readlines()
+
+        for food_sale in data:
+            split_food_sale = food_sale.split(',')
+
+            order_region = split_food_sale[1]
+
+            all_regions.append(order_region)
+
+    with open('regions.txt', 'w') as f:
+        for region in all_regions:
+            f.write(region)
+            f.write('\n')
+
 if __name__ == '__main__':
     # read_only()
     # write_only()
-    read_food_sales()
-
+    # read_food_sales()
+    write_regions()
